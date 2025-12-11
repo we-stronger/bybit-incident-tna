@@ -22,25 +22,25 @@ The empirical analysis framework is divided into three main stages:
     * **Local Level:** Identification of the three stages of money laundering (Placement, Layering, Integration) based on degree topology.
     * **Global Level:** Network metrics analysis including Reciprocity, Graph Density, and Path Length.
 3.  **Output:** Characterization of money laundering behavioral patterns and strategies.
+
 ## 📊 Dataset Description
 
-[cite_start]The dataset focuses on the Bybit Exploit incident and associated money laundering activities[cite: 78, 81].
+The dataset focuses on the Bybit Exploit incident and associated money laundering activities.
 
-* [cite_start]**Data Source**: Labeled `Bybit Exploit` accounts from the blockchain explorer Etherscan [cite: 69, 86] [cite_start]and their related transaction records[cite: 71].
+* **Data Source**: Labeled `Bybit Exploit` accounts from Etherscan and their related transaction records.
 * **Network Scale**:
-    * [cite_start]**Nodes**: 11,340 (Accounts including money laundering and normal accounts)[cite: 78].
-    * [cite_start]**Edges**: 14,416 (Directed Transactions)[cite: 78].
-* [cite_start]**Attributes**: Transaction timestamps, transaction amounts (converted to ETH), etc.[cite: 73, 77].
+    * **Nodes**: 11,340 (Accounts including hackers and normal addresses)
+    * **Edges**: 14,416 (Directed Transactions)
+* **Attributes**: Transaction hash, block timestamp, sender, receiver, value (ETH), etc.
 
 ## 🧪 Key Findings
 
 Based on the empirical analysis of this dataset, the paper highlights the following patterns in money laundering accounts:
 
-* [cite_start]**Short Lifecycle**: The average lifecycle of money laundering accounts is only **7.75 days** [cite: 94][cite_start], indicating their disposable nature[cite: 95].
-* [cite_start]**High Frequency**: **83.3%** of these accounts conduct more than 10 transactions per day [cite: 138][cite_start], often displaying bursts of trading activities within a short period[cite: 140, 145].
-* [cite_start]**Flow Patterns (The 3 Stages)**: Accounts are categorized based on their topological relationships[cite: 160, 164].
-    * [cite_start]**Placement**: Accounts in the first layer tend to exhibit higher **In-degree** due to receiving numerous small deposits[cite: 164, 170, 172].
-    * [cite_start]**Layering**: Accounts (layers 2 to 10) exhibit high **In-degree & Out-degree** with complex and varied transaction patterns[cite: 164, 175, 184].
-    * [cite_start]**Integration**: Accounts (layers 11 to 17) often show higher **Out-degree** as funds are transferred to final destinations like centralized exchanges (CEX), decentralized exchanges (DEX), or Stablecoins[cite: 164, 190, 197, 202].
-* [cite_start]**Network Topology**: The network exhibits high density (**0.000112**) [cite: 210] [cite_start]compared to normal networks ($10^{-7}$ order) [cite: 210] [cite_start]and low reciprocity (**0.0146**) [cite: 212][cite_start], indicating that funds flow unidirectionally to obscure origins and minimize tracking risks[cite: 213, 214].
-
+* **Short Lifecycle**: The average lifecycle of money laundering accounts is only **7.75 days**, indicating their disposable nature.
+* **High Frequency**: **83.3%** of these accounts conduct more than 10 transactions per day, with distinct bursts of activity to disperse funds rapidly.
+* **Flow Patterns (The 3 Stages)**:
+    * **Placement**: Accounts show high In-degree (receiving dispersed funds).
+    * **Layering**: Accounts show high In-degree & Out-degree (complex mixing behaviors).
+    * **Integration**: Accounts show high Out-degree (flowing funds to CEX, DEX, or Stablecoins).
+* **Network Topology**: The network exhibits high density (**0.000112**) and low reciprocity (**0.0146**), indicating that funds flow unidirectionally to obscure origins and minimize tracking risks.
